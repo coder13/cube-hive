@@ -1,4 +1,28 @@
 {
   "name": "cube-hive",
-  "packageManager": "yarn@4.2.2"
+  "packageManager": "yarn@4.2.2",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "ts-node": "^10.9.2",
+    "tsc": "^2.0.4",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "build:digitalocean": "yarn install --production=false && yarn run build && rm -rf node_modules && yarn install --production --frozen-lockfile"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1",
+    "@types/cors": "^2",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9",
+    "@types/node": "^20.14.2",
+    "nodemon": "^3.1.3"
+  }
 }
